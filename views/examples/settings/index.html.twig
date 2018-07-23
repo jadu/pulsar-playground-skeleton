@@ -1,17 +1,17 @@
 {% extends 'playground.html.twig' %}
 
-{% set heading = 'List Layout' %}
+{% set heading = 'Settings Layout' %}
 
 {%
     set breadcrumbs = [
         {'label': 'Pulsar', 'href': '#'},
-        {'label': 'Layouts', 'href': '#'},
-        {'label': 'List' }
+        {'label': 'Examples', 'href': '#'},
+        {'label': 'Settings' }
     ]
 %}
 
 {% set tab_one %}
-    {% include 'list/tab.html.twig' %}
+    {% include 'examples/settings/tab.html.twig' %}
 {% endset %}
 
 {%

@@ -1,0 +1,52 @@
+{% extends '@pulsar/pulsar/components/tab.html.twig' %}
+
+{%- block actions_left -%}
+    {{
+        html.actions_menu({
+            'items': [
+                [
+                    {
+                        'label': 'Save',
+                        'href': '/save',
+                        'icon': 'save'
+                    },
+                    {
+                        'label': 'Edit',
+                        'href': '/edit',
+                        'icon': 'pencil'
+                    }
+                ],
+                [
+                    {
+                        'label': 'Delete',
+                        'href': '/delete',
+                        'icon': 'remove'
+                    }
+                ]
+            ]
+        })
+    }}
+{%- endblock -%}
+
+{%- block actions_right -%}
+    {{
+        html.button({
+            'label': 'Primary Action',
+            'class': 'btn--primary'
+        })
+    }}
+{%- endblock -%}
+
+{% block tab_content %}
+    <h2>Get started</h2>
+    <p>This file is located at <code>views/playground/tab.html.twig</code> and you can modify it to suit your UI, you may want to start by replacing with the contents from one of from one of the following example layouts:</p>
+    <ul>
+        <li><a href="examples/list">list</a></li>
+        <li><a href="examples/report">report</a></li>
+        <li><a href="examples/settings">settings</a></li>
+    </ul>
+{% endblock tab_content %}
+
+{% block tab_sidebar %}
+{% endblock tab_sidebar %}
+

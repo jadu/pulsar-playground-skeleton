@@ -1,24 +1,23 @@
 {% extends 'playground.html.twig' %}
 
-{% set heading = 'Report Layout' %}
+{% set heading = 'My Playground' %}
 
 {%
     set breadcrumbs = [
         {'label': 'Pulsar', 'href': '#'},
-        {'label': 'Layouts', 'href': '#'},
-        {'label': 'Report' }
+        {'label': 'Playground', 'href': '#'},
+        {'label': 'My Playground' }
     ]
 %}
 
 {% set tab_one %}
-    {% include 'report/tab.html.twig' %}
+    {% include 'playground/tab.html.twig' %}
 {% endset %}
 
 {%
     set tabs_content = [
         {
           "id"    : "one",
-          "class" : "ui-report",
           "label" : "Tab One",
           "src"   : tab_one,
           "active": true
