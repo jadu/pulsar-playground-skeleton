@@ -1,0 +1,22 @@
+{
+    "name": "jadu/pulsar-docs",
+    "description": "The User Experience and Interface framework for the Jadu Continuum Platform",
+    "license": "MIT",
+    "version": "0.0.1",
+    "autoload": {
+        "psr-0": {
+            "Jadu\\Pulsar": "src"
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo-packagist.hq.jadu.net/jadu/"
+        }
+    ],
+    "require": {
+        "twig/twig": "^1.21",
+        "jadu/pulsar": "dev-develop",
+        "jadu/pulsar-fonts": "^0.0.3"
+    }
+}

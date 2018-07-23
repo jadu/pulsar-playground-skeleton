@@ -1,0 +1,106 @@
+{% extends 'base.html.twig' %}
+
+{% import '@pulsar/pulsar/v2/helpers/flash.html.twig' as flash %}
+{% import '@pulsar/pulsar/v2/helpers/html.html.twig' as html %}
+{% import '@pulsar/pulsar/v2/helpers/form.html.twig' as form %}
+{% import '@pulsar/pulsar/v2/helpers/tabs.html.twig' as tabs %}
+
+{% block title %}Lexicon{% endblock %}
+
+
+{%
+    set actions_menu = [
+        html.link({
+          'label': html.icon('save') ~ ' Save',
+          'href': '#save'
+        }),
+        html.link({
+          'label': html.icon('print') ~ ' Print',
+          'href': '#print'
+        }),
+        html.divider(),
+        html.link({
+          'label': html.icon('trash') ~ ' Delete',
+          'href': '#delete',
+          'class': 'link--danger disabled',
+          'attributes': 'data-on-datagrid-item-selected=enable'
+        })
+    ]
+%}
+
+{%
+    set nav_data = {
+        '1': {
+            'label': 'Publishing',
+            'href': '#publishing',
+            'icon': 'pencil',
+            'class': 'is-active',
+            'items': {
+            }
+        },
+        '2': {
+            'label': 'eGov',
+            'href': '#egov',
+            'icon': 'building',
+            'items': {
+            }
+        },
+        '3': {
+            'label': 'Marketing',
+            'href': '#marketing',
+            'icon': 'bullhorn',
+            'items': {
+            }
+        },
+        '4': {
+            'label': 'XForms Pro',
+            'href': '#xforms',
+            'icon': 'check-square',
+            'items': {
+            }
+        },
+        '5': {
+            'label': 'Galaxies',
+            'href': '#galaxies',
+            'icon': 'sitemap',
+            'items': {
+            }
+        },
+        '6': {
+            'label': 'Rupa',
+            'href': '#rupa',
+            'icon': 'search',
+            'items': {
+            }
+        },
+        '7': {
+            'label': 'Utilities',
+            'href': '#utilities',
+            'icon': 'wrench',
+            'items': {
+            }
+        },
+        '8': {
+            'label': 'Settings',
+            'href': '#settings',
+            'icon': 'cogs',
+            'items': {
+            }
+        }
+    }
+%}
+
+{% block tabs_list %}
+    {{ tabs.list(tabs_content) }}
+{% endblock %}
+
+{% block tabs_content %}
+    {{ tabs.content(tabs_content) }}
+{% endblock %}
+
+{% block notifications %}
+    {% include '@pulsar/lexicon/includes/notifications.html.twig' %}
+{% endblock %}
+
+{% block javascript %}
+{% endblock %}
