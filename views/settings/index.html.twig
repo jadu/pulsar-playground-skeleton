@@ -1,0 +1,26 @@
+{% extends 'playground.html.twig' %}
+
+{% set heading = 'Settings Layout' %}
+
+{%
+    set breadcrumbs = [
+        {'label': 'Pulsar', 'href': '#'},
+        {'label': 'Layouts', 'href': '#'},
+        {'label': 'Settings' }
+    ]
+%}
+
+{% set tab_one %}
+    {% include 'settings/tab.html.twig' %}
+{% endset %}
+
+{%
+    set tabs_content = [
+        {
+          "id"    : "one",
+          "label" : "Tab One",
+          "src"   : tab_one,
+          "active": true
+        }
+    ]
+%}

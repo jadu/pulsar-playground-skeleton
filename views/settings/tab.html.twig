@@ -1,0 +1,90 @@
+{% extends '@pulsar/pulsar/components/tab.html.twig' %}
+
+{%- block actions_left -%}
+    {{
+        html.actions_menu({
+            'items': [
+                [
+                    {
+                        'label': 'Save',
+                        'href': '/save',
+                        'icon': 'save'
+                    },
+                    {
+                        'label': 'Edit',
+                        'href': '/edit',
+                        'icon': 'pencil'
+                    }
+                ],
+                [
+                    {
+                        'label': 'Delete',
+                        'href': '/delete',
+                        'icon': 'remove'
+                    }
+                ]
+            ]
+        })
+    }}
+{%- endblock -%}
+
+{%- block actions_right -%}
+    {{
+        html.button({
+            'label': 'Primary Action',
+            'class': 'btn--primary'
+        })
+    }}
+{%- endblock -%}
+
+{% block tab_settings %}                                        
+    <div class="settings-section settings-section--primary">
+        {{ form.create() }}
+        <h3 class="settings-section__heading">Settings Section Heading</h3>
+        <p>Inline help text to provide more information about this user interface</p>
+
+        {{
+            form.text({
+                'label': 'Text input',
+                'class': 'form__group--top form__group--flush form__group--full'
+            })
+        }}
+
+        {{
+            form.checkbox({
+                'label': 'Checkbox',
+                'class': 'form__group--full'
+            })
+        }}
+
+        {{
+            form.end({
+                'class': 'form__actions--flush',
+                'actions': [
+                    form.submit({
+                        'class': 'btn--primary',
+                        'label': 'Primary Action'
+                    }),
+                    html.button({
+                        'class': 'btn--naked',
+                        'type': 'link',
+                        'label': 'Cancel',
+                        'href': '/home'
+                    }),
+                    html.button({
+                        'class': 'btn--danger u-float-right',
+                        'label': 'Delete'
+                    })
+                ]
+            })
+        }}
+    </div>
+{% endblock tab_settings %}
+
+{% block tab_content %}
+    <p class="u-text-align-center">TAB CONTENT</p>
+{% endblock tab_content %}
+
+{% block tab_sidebar %}
+{% endblock tab_sidebar %}
+
