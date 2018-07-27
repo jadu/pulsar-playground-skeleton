@@ -45,6 +45,7 @@ Any code you write here should be moved either into Pulsar, or into product-spec
     }
 
     .btn > [class*="icon-"] {
+        color: color(text, help);
         font-size: 24px;
     }
 
@@ -66,8 +67,8 @@ Any code you write here should be moved either into Pulsar, or into product-spec
 .galaxies-preview-subtitle {
     color: color(text, help);
     float: left;
-    line-height: 1.75em;
-    margin: .85em 0 0 10px;
+    line-height: 1em;
+    margin: 1.25em 0 0 10px;
     font-size: $font-size-small;
 }
 
