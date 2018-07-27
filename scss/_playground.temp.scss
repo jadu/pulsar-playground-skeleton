@@ -129,3 +129,13 @@ Any code you write here should be moved either into Pulsar, or into product-spec
     }
 }
 
+// Make sure settings panel has correct colour contrast
+.tab__settings {
+    [href] {
+        color: color(link, dark);
+    }
+
+    .help-block {
+        color: color(text);
+    }
+}

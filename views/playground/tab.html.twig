@@ -74,6 +74,7 @@
                 'label': 'Accent colour',
                 'class': 'form__group--top form__group--full form__group--flush',
                 'id': 'accent_colour',
+                'name': 'accent_colour',
                 'options': [
                     {
                         'label': 'Red',
@@ -92,6 +93,7 @@
                 'label': 'Header / Body typeface',
                 'class': 'form__group--top form__group--full form__group--flush',
                 'id': 'typeface',
+                'name': 'typeface',
                 'options': [
                     {
                         'label': 'Gotham / PT Sans',
@@ -110,7 +112,8 @@
                 'label': 'Branding / Logo',
                 'class': 'form__group--top form__group--full form__group--flush',
                 'help': 'Used in your site header, favicon and emails.<br />Min 200x200px. Use SVG for best results',
-                'id': 'typeface',
+                'id': 'branding',
+                'name': 'branding'
             })
         }}
 
@@ -135,7 +138,7 @@
 {% endblock tab_settings %}
 
 {% block tab_content %}
-    <h3 class="galaxies-preview-title">Preview</h3>
+    <h3 id="aria-galaxies-preview" class="galaxies-preview-title">Preview</h3>
     <h3 class="galaxies-preview-subtitle">* to be used as an example only</h3>
     <div class="responsive-toggles">
         {{
@@ -162,7 +165,7 @@
     </div>
     <div class="galaxies-preview">
         <div class="galaxies-preview__frame galaxies-preview__frame--desktop js-responsive-container">
-            <iframe src="http://www.leeds.ac.uk/"></iframe>
+            <iframe src="http://www.leeds.ac.uk/" aria-labelledby="aria-galaxies-preview"></iframe>
         </div>
     </div>
 {% endblock tab_content %}
