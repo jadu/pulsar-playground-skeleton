@@ -52,6 +52,19 @@ module.exports = function(grunt) {
             }
         },
 
+        browserSync: {
+            files: [
+                'css/*',
+                'js/**/*',
+                'views/**/*'
+            ],
+            options: {
+                proxy: 'http://localhost:5000/app.php',
+                reloadOnRestart: true,
+                watchTask: true
+            }
+	    },
+
         browserify: {
             dev: {
                 files: {
@@ -101,6 +114,7 @@ module.exports = function(grunt) {
         'sass',
         'autoprefixer',
         'browserify',
+        'browserSync',
         'watch'
     ]);
 

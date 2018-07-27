@@ -67,6 +67,10 @@ Any code you write here should be moved either into Pulsar, or into product-spec
     border-radius: 30px;
     padding: 70px 10px;
 
+    iframe {
+        width: 100%;
+    }
+
     &::before,
     &::after {
         background-color: color(grey, lightest);
