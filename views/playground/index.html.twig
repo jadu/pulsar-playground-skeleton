@@ -1,6 +1,7 @@
 {% extends 'playground.html.twig' %}
+{% import '@pulsar/pulsar/v2/helpers/html.html.twig' as html %}
 
-{% set heading = 'My Playground' %}
+{% set heading = 'Continuum Festival ' ~ html.label({'label': 'unpublished', 'class': 'label--warning'}) %}
 
 {%
     set breadcrumbs = [
@@ -17,10 +18,22 @@
 {%
     set tabs_content = [
         {
-          "id"    : "one",
-          "label" : "Tab One",
+          "id"    : "settings",
+          "label" : "Settings"
+        },
+        {
+          "id"    : "theme",
+          "label" : "Theme",
           "src"   : tab_one,
           "active": true
+        },
+        {
+          "id"    : "security",
+          "label" : "Security"
+        },
+        {
+          "id"    : "admin",
+          "label" : "Admin"
         }
     ]
 %}

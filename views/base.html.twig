@@ -104,7 +104,7 @@
                             </div>
                         {% endblock %}
                     {% else %}
-                        <h1 class="main-title">{{ heading|default('MISSING HEADING') }}</h1>
+                        <h1 class="main-title">{{ heading|default('MISSING HEADING')|raw }}</h1>
                     {% endif %}
 
                     {% block tabs_list %}{% endblock %}
@@ -137,9 +137,143 @@
         <!-- empty modal for ajax requests -->
     </div>
 
-{% endblock body %}
+    <div class="modal modal--large" id="themeChooser" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="themeChooser-title" aria-describedby="themeChooser-description">
+    <div class="modal__dialog">
+        <div class="modal__content">
+            <div class="modal__header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h1 class="modal__title" id="themeChooser-title">Themes</h1>
+            </div>
+            <div class="modal__body">
+                <p id="themeChooser-description" class="hide">Choose a theme category from the list to see what themes are available.</p>
+                <div class="g-col g-col--3 g-col--first">
+                    <h2 class="heading--small">Categories</h2>
+                        <ul class="list--naked tabs__list">
+                            <li class="is-active"><a href="#themes_demo" data-toggle="tab">Demo themes</a></li>
+                            <li><a href="#themes_education" data-toggle="tab">Education &amp; Schools</a></li>
+                            <li><a href="#themes_events" data-toggle="tab">Events &amp; Venues</a></li>
+                            <li><a href="#themes_local" data-toggle="tab">Local authority</a></li>
+                            <li><a href="#themes_leisure" data-toggle="tab">Leisure &amp; Tourism</a></li>
+                            <li><a href="#themes_research" data-toggle="tab">Research</a></li>
+                            <li><a href="#themes_services" data-toggle="tab">Services</a></li>
+                        </ul>
+                        {{
+                            html.panel({
+                                'body': '<small>Find more themes in the ' ~ html.link({'label': 'Jadu Library', 'href': 'https://www.jadu.net/library/'}) ~ '</small>'
+                            })
+                        }}
+                </div>
+                <div class="tabs__content g-col g-col--9">
+                    <div id="themes_demo" class="tab__pane u-margin-top-none is-active g-col g-col--12">
+                        <h2 class="heading--small g-col g-col--12 g-col-push--1 g-col--first">Choose a theme</h2>
+                        <div class="row u-margin-bottom--large">
+                            <div class="card g-col g-col--5 g-col-push--1 g-col--first u-text-align-center">
+                                <img src="https://images.template.net/wp-content/uploads/2014/10/18072634/Responsive-Hotel-Google-Website-Template.jpg" class="card-img">
+                                <div class="card__body">
+                                    <a href="#cta-one" class="card-link">Theme Name</a>
+                                </div>
+                            </div>
+                            <div class="card g-col g-col--5 g-col-push--1 u-text-align-center">
+                                <img src="https://images.template.net/wp-content/uploads/2017/08/Classified-Drupal-Theme-Template.jpg" class="card-img">
+                                <div class="card__body">
+                                    <a href="#cta-one" class="card-link">Theme Name</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row u-margin-bottom--large">
+                            <div class="card g-col g-col--5 g-col-push--1 u-text-align-center">
+                                <img src="https://images.template.net/wp-content/uploads/2014/10/18103102/Responsive-Multi-Purpose-Joomla-Google-Website-Theme.jpg" class="card-img">
+                                <div class="card__body">
+                                    <a href="#cta-one" class="card-link">Theme Name</a>
+                                </div>
+                            </div>
+                            <div class="card g-col g-col--5 g-col-push--1 g-col--first u-text-align-center">
+                                <img src="https://images.template.net/wp-content/uploads/2014/10/18103342/Professional-Photographer-Googlw-Website-Template.jpg" class="card-img">
+                                <div class="card__body">
+                                    <a href="#cta-one" class="card-link">Theme Name</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="themes_education" class="tab__pane u-margin-top-none g-col g-col--12">
+                        <h2 class="heading--small g-col g-col--12 g-col-push--1 g-col--first">Choose a theme</h2>
+                        <div class="row u-margin-bottom--large">
+                            <div class="card g-col g-col--5 g-col-push--1 g-col--first u-text-align-center">
+                                <img src="https://images.template.net/wp-content/uploads/2014/10/18105151/Small-Business-Responsive-google-Website-Template.jpg" class="card-img">
+                                <div class="card__body">
+                                    <a href="#cta-one" class="card-link">Theme Name</a>
+                                </div>
+                            </div>
+                            <div class="card g-col g-col--5 g-col-push--1 u-text-align-center">
+                                <img src="https://images.template.net/wp-content/uploads/2014/10/18104950/Responsive-Hotel-Travel-google-Website-Template.jpg" class="card-img">
+                                <div class="card__body">
+                                    <a href="#cta-one" class="card-link">Theme Name</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="themes_events" class="tab__pane u-margin-top-none g-col g-col--12">
+                        <h2 class="heading--small g-col g-col--12 g-col-push--1 g-col--first">Choose a theme</h2>
+                        <div class="no-results g-col g-col--11 g-col-push--1 g-col--first">
+                            <div class="no-results__message">
+                                <p>There are currently no themes to display</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="themes_local" class="tab__pane u-margin-top-none g-col g-col--12">
+                        <h2 class="heading--small g-col g-col--12 g-col-push--1 g-col--first">Choose a theme</h2>
+                        <div class="no-results g-col g-col--11 g-col-push--1 g-col--first">
+                            <div class="no-results__message">
+                                <p>There are currently no themes to display</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="themes_leisure" class="tab__pane u-margin-top-none g-col g-col--12">
+                        <h2 class="heading--small g-col g-col--12 g-col-push--1 g-col--first">Choose a theme</h2>
+                        <div class="no-results g-col g-col--11 g-col-push--1 g-col--first">
+                            <div class="no-results__message">
+                                <p>There are currently no themes to display</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="themes_research" class="tab__pane u-margin-top-none g-col g-col--12">
+                        <h2 class="heading--small g-col g-col--12 g-col-push--1 g-col--first">Choose a theme</h2>
+                        <div class="no-results g-col g-col--11 g-col-push--1 g-col--first">
+                            <div class="no-results__message">
+                                <p>There are currently no themes to display</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="themes_services" class="tab__pane u-margin-top-none g-col g-col--12">
+                        <h2 class="heading--small g-col g-col--12 g-col-push--1 g-col--first">Choose a theme</h2>
+                        <div class="no-results g-col g-col--11 g-col-push--1 g-col--first">
+                            <div class="no-results__message">
+                                <p>There are currently no themes to display</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal__footer">
+                {{
+                    form.submit({
+                        'class': 'btn--primary',
+                        'label': 'Save'
+                    })
+                }}
+                {{
+                    html.button({
+                        'class': 'btn--naked',
+                        'label': 'Cancel',
+                        'data-dismiss': 'modal'
+                    })
+                }}
+            </div>
+        </div><!-- /.modal__content -->
+    </div><!-- /.modal__dialog -->
+</div><!-- /.modal -->
 
-{% block modals %}{% endblock %}
+{% endblock body %}
 
 {% block javascript %}{% endblock %}
 {% block tab_javascript %}{% endblock %}

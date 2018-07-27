@@ -2,3 +2,126 @@
 This file is included at the end of pulsar.scss.
 Any code you write here should be moved either into Pulsar, or into product-specific components.
 */
+.row {
+    float: left;
+    margin-bottom: $margin-base;
+}
+
+.heading--small {
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+.list--naked li.is-active {
+    background-color: color(primary);
+    border-radius: $border-radius;
+    margin-left: -5px;
+    padding-left: 5px;
+
+    &,
+    & > a {
+        color: color(primary, alt);
+        text-decoration: none;
+    }
+}
+
+.galaxies-preview {
+    clear: both;
+    transition: width 2s;
+
+    iframe {
+        border: 1px solid color(border);
+        height: 800px;
+        width: 100%;
+    }
+}
+
+.responsive-toggles {
+    float: right;
+    margin-bottom: .5em;
+}
+
+.galaxies-preview-title {
+    float: left;
+    margin: .25em 0;
+}
+
+.galaxies-preview-subtitle {
+    color: color(text, help);
+    float: left;
+    line-height: 1.75em;
+    margin: .25em 0 .25em 10px;
+    font-size: $font-size-small;
+}
+
+.galaxies-preview__frame {
+    margin: 0 auto;
+    position: relative;
+    transition: all .25s;
+}
+
+.galaxies-preview__frame--mobile,
+.galaxies-preview__frame--tablet {
+    background-color: #efefef;
+    border: 3px solid color(grey, lightest);
+    border-radius: 30px;
+    padding: 70px 10px;
+
+    &::before,
+    &::after {
+        background-color: color(grey, lightest);
+        content: '';
+        display: block;
+        margin: 0 auto;
+        position: absolute;
+    }
+
+    &::before {
+        border-radius: 25px;
+        height: 10px;
+        width: 10px;
+        top: 30px;
+    }
+
+    &::after {
+        border-radius: 25px;
+        height: 50px;
+        width: 50px;
+        bottom: 15px;
+        left: 195px;
+    }
+}
+
+.galaxies-preview__frame--tablet {
+    width: $screen-tablet + 20px;
+
+    iframe {
+        height: 1024px;
+    }
+
+    &::before {
+        left: (($screen-tablet + 20px) / 2) - 2.5px;
+    }
+
+    &::after {
+        left: (($screen-tablet + 20px) / 2) - 25px;
+    }
+}
+
+.galaxies-preview__frame--mobile {
+    width: $screen-phone + 20px;
+
+    iframe {
+        height: 768px;
+    }
+
+    &::before {
+        width: 100px;
+        left: (($screen-phone + 20px) / 2) - 50px;
+    }
+
+    &::after {
+        left: (($screen-phone + 20px) / 2) - 25px;
+    }
+}
+

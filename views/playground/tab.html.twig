@@ -31,22 +31,141 @@
 {%- block actions_right -%}
     {{
         html.button({
-            'label': 'Primary Action',
+            'label': 'Go to Control Centre'
+        })
+    }}
+    {{
+        html.button({
+            'label': 'View Site'
+        })
+    }}
+    {{
+        html.button({
+            'label': 'Publish',
+            'class': 'btn--success'
+        })
+    }}
+    {{
+        html.button({
+            'label': 'Save',
             'class': 'btn--primary'
         })
     }}
 {%- endblock -%}
 
+{% block tab_settings %}
+    <div class="settings-section settings-section--primary">
+        {{ form.create() }}
+        <h2 class="settings-section__heading">Photon Theme
+            {{ 
+                html.link({
+                    'label': 'Change Theme',
+                    'class': 'u-float-right u-font-size-small',
+                    'data-toggle': 'modal',
+                    'type': 'link',
+                    'href': '#themeChooser'
+                })
+            }}
+        </h2>
+        <hr />
+
+        {{
+            form.select({
+                'label': 'Accent colour',
+                'class': 'form__group--top form__group--full form__group--flush',
+                'id': 'accent_colour',
+                'options': [
+                    {
+                        'label': 'Red',
+                        'value': 'colour_red'
+                    },
+                    {
+                        'label': 'Blue',
+                        'value': 'colour_blue'
+                    }
+                ]
+            })
+        }}
+
+        {{
+            form.select({
+                'label': 'Header / Body typeface',
+                'class': 'form__group--top form__group--full form__group--flush',
+                'id': 'typeface',
+                'options': [
+                    {
+                        'label': 'Gotham / PT Sans',
+                        'value': 'gotham'
+                    },
+                    {
+                        'label': 'Helvetica Neue / Georgia',
+                        'value': 'helvetica_neue'
+                    }
+                ]
+            })
+        }}
+
+        {{
+            form.file({
+                'label': 'Branding / Logo',
+                'class': 'form__group--top form__group--full form__group--flush',
+                'help': 'Used in your site header, favicon and emails.<br />Min 200x200px. Use SVG for best results',
+                'id': 'typeface',
+            })
+        }}
+
+        {{
+            form.end({
+                'class': 'form__actions--flush',
+                'actions': [
+                    form.submit({
+                        'class': 'btn--primary',
+                        'label': 'Save'
+                    }),
+                    html.button({
+                        'class': 'btn--naked',
+                        'type': 'link',
+                        'label': 'Cancel',
+                        'href': '/home'
+                    })
+                ]
+            })
+        }}
+    </div>
+{% endblock tab_settings %}
+
 {% block tab_content %}
-    <h2>Get started</h2>
-    <p>This file is located at <code>views/playground/tab.html.twig</code> and you can modify it to suit your UI, you may want to start by replacing with the contents from one of from one of the following example layouts:</p>
-    <ul>
-        <li><a href="examples/list">list</a></li>
-        <li><a href="examples/report">report</a></li>
-        <li><a href="examples/settings">settings</a></li>
-    </ul>
+    <h3 class="galaxies-preview-title">Preview</h3>
+    <h3 class="galaxies-preview-subtitle">* to be used as an example only</h3>
+    <div class="responsive-toggles">
+        {{
+            html.button({
+                'label': html.icon('mobile'),
+                'class': 'btn--naked',
+                'data-responsive-toggle': 'mobile'
+            })
+        }}
+        {{
+            html.button({
+                'label': html.icon('tablet'),
+                'class': 'btn--naked',
+                'data-responsive-toggle': 'tablet'
+            })
+        }}
+        {{
+            html.button({
+                'label': html.icon('desktop'),
+                'class': 'btn--outline btn--inverse',
+                'data-responsive-toggle': 'desktop'
+            })
+        }}
+    </div>
+    <div class="galaxies-preview">
+        <div class="galaxies-preview__frame galaxies-preview__frame--desktop js-responsive-container">
+            <iframe src="http://www.leeds.ac.uk/"></iframe>
+        </div>
+    </div>
 {% endblock tab_content %}
 
-{% block tab_sidebar %}
-{% endblock tab_sidebar %}
+
 
