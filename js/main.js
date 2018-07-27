@@ -49,8 +49,8 @@
                     .addClass('galaxies-preview__frame--desktop');
             }
 
-            $this.removeClass('btn--naked').addClass('btn--outline btn--inverse').blur();
-            $otherToggles.removeClass('btn--outline btn--inverse').addClass('btn--naked');
+            $this.addClass('is-active').blur();
+            $otherToggles.removeClass('is-active');
         });
 
     });

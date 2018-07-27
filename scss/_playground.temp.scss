@@ -39,27 +39,46 @@ Any code you write here should be moved either into Pulsar, or into product-spec
 .responsive-toggles {
     float: right;
     margin-bottom: .5em;
+
+    .btn {
+        border-radius: 0;
+    }
+
+    .btn > [class*="icon-"] {
+        font-size: 24px;
+    }
+
+    .btn.is-active {
+        box-shadow: 0 3px 0 color(primary);
+        color: color(primary);
+
+        > [class*="icon-"] {
+            color: color(primary);
+        }
+    }
 }
 
 .galaxies-preview-title {
     float: left;
-    margin: .25em 0;
+    margin: .75em 0 0;
 }
 
 .galaxies-preview-subtitle {
     color: color(text, help);
     float: left;
     line-height: 1.75em;
-    margin: .25em 0 .25em 10px;
+    margin: .85em 0 0 10px;
     font-size: $font-size-small;
 }
 
 .galaxies-preview__frame {
+    border: 3px solid color(grey, lightest);
     margin: 0 auto;
     position: relative;
     transition: all .25s;
 
     iframe {
+        border: 0;
         width: 100%;
     }
 }
@@ -67,7 +86,6 @@ Any code you write here should be moved either into Pulsar, or into product-spec
 .galaxies-preview__frame--mobile,
 .galaxies-preview__frame--tablet {
     background-color: #efefef;
-    border: 3px solid color(grey, lightest);
     border-radius: 30px;
     padding: 70px 10px;
 
@@ -138,4 +156,8 @@ Any code you write here should be moved either into Pulsar, or into product-spec
     .help-block {
         color: color(text);
     }
+}
+
+.btn--outline:hover {
+    margin-bottom: 1px;
 }
