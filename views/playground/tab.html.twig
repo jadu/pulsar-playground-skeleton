@@ -140,21 +140,21 @@
     <div class="responsive-toggles">
         {{
             html.button({
-                'label': html.icon('mobile'),
+                'label': html.icon('mobile', {'label': 'Small screen example'}),
                 'class': 'btn--naked',
                 'data-responsive-toggle': 'mobile'
             })
         }}
         {{
             html.button({
-                'label': html.icon('tablet'),
+                'label': html.icon('tablet', {'label': 'Medium screen example'}),
                 'class': 'btn--naked',
                 'data-responsive-toggle': 'tablet'
             })
         }}
         {{
             html.button({
-                'label': html.icon('desktop'),
+                'label': html.icon('desktop', {'label': 'Large screen example'}),
                 'class': 'btn--outline btn--inverse',
                 'data-responsive-toggle': 'desktop'
             })
