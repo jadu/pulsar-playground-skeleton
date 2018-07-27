@@ -63,7 +63,7 @@ module.exports = function(grunt) {
                 reloadOnRestart: true,
                 watchTask: true
             }
-	    },
+        },
 
         browserify: {
             dev: {
@@ -86,7 +86,7 @@ module.exports = function(grunt) {
         autoprefixer: {
             dev: {
                 options: {
-                    browsers: ['last 2 version', 'ie 7', 'ie 8', 'ie 9']
+                    browsers: ['last 2 version', 'ie 8', 'ie 9']
                 },
                 expand: true,
                 src:    'css/*.css'
@@ -113,6 +113,7 @@ module.exports = function(grunt) {
     grunt.registerTask('default', [
         'sass',
         'autoprefixer',
+        'bless',
         'browserify',
         'browserSync',
         'watch'
