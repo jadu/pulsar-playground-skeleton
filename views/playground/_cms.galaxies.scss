@@ -1,30 +1,3 @@
-/*
-This file is included at the end of pulsar.scss.
-Any code you write here should be moved either into Pulsar, or into product-specific components.
-*/
-.row {
-    float: left;
-    margin-bottom: $margin-base;
-}
-
-.heading--small {
-    font-size: 1em;
-    line-height: 1.5em;
-}
-
-.list--naked li.is-active {
-    background-color: color(primary);
-    border-radius: $border-radius;
-    margin-left: -5px;
-    padding-left: 5px;
-
-    &,
-    & > a {
-        color: color(primary, alt);
-        text-decoration: none;
-    }
-}
-
 .galaxies-preview {
     clear: both;
     transition: width 2s;
@@ -146,19 +119,4 @@ Any code you write here should be moved either into Pulsar, or into product-spec
     &::after {
         left: (($screen-phone + 20px) / 2) - 25px;
     }
-}
-
-// Make sure settings panel has correct colour contrast
-.tab__settings {
-    [href] {
-        color: color(link, dark);
-    }
-
-    .help-block {
-        color: color(text);
-    }
-}
-
-.btn--outline:hover {
-    margin-bottom: 1px;
 }

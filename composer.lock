@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "94f761ba9aed33ee3d2cd7d872c72be3",
+    "content-hash": "e98e903027e8251296120778c4b81601",
     "packages": [
         {
             "name": "jadu/pulsar",
-            "version": "dev-develop",
+            "version": "dev-CMS/galaxies-statics",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jadu/pulsar.git",
-                "reference": "bfcc152281400892da80be32e45108da2408743d"
+                "reference": "ad1c591ec15d649809065814d61680d22f8d276d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jadu/pulsar/zipball/bfcc152281400892da80be32e45108da2408743d",
-                "reference": "bfcc152281400892da80be32e45108da2408743d",
+                "url": "https://api.github.com/repos/jadu/pulsar/zipball/ad1c591ec15d649809065814d61680d22f8d276d",
+                "reference": "ad1c591ec15d649809065814d61680d22f8d276d",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -44,7 +44,7 @@
                 "MIT"
             ],
             "description": "The User Experience and Interface framework for the Jadu Continuum Platform",
-            "time": "2018-07-19T10:23:59+00:00"
+            "time": "2017-11-10T10:41:20+00:00"
         },
         {
             "name": "jadu/pulsar-fonts",
